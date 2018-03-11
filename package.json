@@ -1,0 +1,17 @@
+{
+  "name": "appinsights-rest-api",
+  "version": "1.0.0",
+  "description": "Telemetry API for Azure Application Insight",
+  "main": "server.js",
+  "scripts": {
+    "build": "docker build -t appinsights-rest-api .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manish Pratap Singh",
+  "license": "MIT",
+  "dependencies": {
+    "applicationinsights": "^1.0.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
