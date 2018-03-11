@@ -7,7 +7,12 @@ const appInsights = require("applicationinsights");
 // Constants
 const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';
-const I_KEY = process.env.INSTRUMENTATION_KEY || "7ef83942-4cf2-46f4-8233-45c7d1e22fed";
+const I_KEY = process.env.INSTRUMENTATION_KEY;
+
+if(!I_KEY){
+    console.error("Azure Application Insights Instrumentation Key is not present in enviornment variable. set 'INSTRUMENTATION_KEY' Enviroment variable with Instrumentation key.");
+    return;
+}
 
 // setup appilcation insights.
 appInsights.setup(I_KEY)
