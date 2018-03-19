@@ -20,9 +20,9 @@ appInsights.setup(I_KEY)
     .setAutoCollectRequests(false)
     .setAutoCollectDependencies(false)
     .setAutoDependencyCorrelation(false)
-    .setAutoCollectExceptions(false)
-    .setAutoCollectConsole(false)
-    .setUseDiskRetryCaching(false)
+    .setAutoCollectExceptions(true)
+    .setAutoCollectConsole(true)
+    .setUseDiskRetryCaching(true)
     .start();
 
 let client = appInsights.defaultClient;
@@ -72,4 +72,4 @@ app.post('/trackRequest', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running on http://${HOST}:${PORT} , Instrumentation Key: [${I_KEY}]`);
